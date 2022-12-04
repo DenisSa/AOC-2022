@@ -39,12 +39,11 @@ fn main_pt1() -> io::Result<()> {
 
 fn main() -> io::Result<()> {
     let file = File::open("/home/d/Development/AOC-2022/aoc202203/src/input.txt")?;
-    let mut reader = BufReader::new(file);
+    let reader = BufReader::new(file);
     let mut letter_collection = Vec::new();
     let mut total_sum:u32 = 0;
 
     let lines: Vec<_> = reader.lines().collect();
-    let line_cnt = lines.len();
 
     for chunk in lines.chunks(3){
         for c in chunk[0].as_ref().unwrap().chars(){
